@@ -1,6 +1,6 @@
 ﻿namespace Krysa_game
 {
-    partial class Form1
+    partial class Hra
     {
         /// <summary>
         /// Required designer variable.
@@ -28,35 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hra));
+            this.Krysa = new System.Windows.Forms.PictureBox();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.gameArea = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.Krysa)).BeginInit();
+            this.gameArea.SuspendLayout();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // Krysa
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(215, 91);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.Krysa.Image = ((System.Drawing.Image)(resources.GetObject("Krysa.Image")));
+            this.Krysa.Location = new System.Drawing.Point(327, 433);
+            this.Krysa.Name = "Krysa";
+            this.Krysa.Size = new System.Drawing.Size(50, 64);
+            this.Krysa.TabIndex = 0;
+            this.Krysa.TabStop = false;
             // 
-            // Form1
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Interval = 20;
+            this.Timer.Tick += new System.EventHandler(this.TimerEvent);
+            // 
+            // gameArea
+            // 
+            this.gameArea.Controls.Add(this.Krysa);
+            this.gameArea.Location = new System.Drawing.Point(12, 12);
+            this.gameArea.Name = "gameArea";
+            this.gameArea.Size = new System.Drawing.Size(960, 537);
+            this.gameArea.TabIndex = 1;
+            // 
+            // Hra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(828, 464);
-            this.Controls.Add(this.checkBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.gameArea);
+            this.Name = "Hra";
+            this.Text = "Krysa Game";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
+            ((System.ComponentModel.ISupportInitialize)(this.Krysa)).EndInit();
+            this.gameArea.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.PictureBox Krysa;
+        private System.Windows.Forms.Timer Timer;
+        private System.Windows.Forms.Panel gameArea;
     }
 }
 
